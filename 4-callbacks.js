@@ -23,14 +23,28 @@
 // geocode('India',(data)=>{
 //     console.log(data)
 // })
-const add =(a,b, callback)=>{
-    setTimeout(() => {
-        const sum = a+b
-        callback(sum)
+// const add =(a,b, callback)=>{
+//     setTimeout(() => {
+//         const sum = a+b
+//         callback(sum)
         
-    }, 2000);
-}
+//     }, 2000);
+// }
 
-add(1,4,(sum)=>{
-    console.log(sum)
+// add(1,4,(sum)=>{
+//     console.log(sum)
+// })
+
+const doWorkCallback=(callback)=>{
+    setTimeout(()=>{
+        // callback('This is my error',undefined)
+        callback(undefined,[1,2,3])
+
+    },3000)
+}
+doWorkCallback((error, result)=>{
+    if(error){
+        return console.log(error)
+    }
+    console.log(result)
 })
